@@ -3,7 +3,10 @@ package com.example.core.order;
 import com.example.core.discount.DiscountPolicy;
 import com.example.core.member.Member;
 import com.example.core.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     //final이면 무조건 할당이 되어야함.
@@ -11,6 +14,7 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy; //DIP 해결
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
