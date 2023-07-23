@@ -42,8 +42,7 @@ public class AppConfig {
     @Bean
     public OrderService orderService() { //orderService에 대한 구체적인 할인 정책을 여기서 선택
         System.out.println("call AppConfig.orderService");
-//        return new OrderServiceImpl(memberRepository(), discountPolicy());
-        return null;
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
