@@ -1,20 +1,27 @@
 package com.example.core.order;
 
+import com.example.core.annotation.MainDiscountPolicy;
 import com.example.core.discount.DiscountPolicy;
 import com.example.core.member.Member;
 import com.example.core.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
     //final이면 무조건 할당이 되어야함.
     //DIP의존: 이전 코드와 비교해보면 인터페이스만 존재한다는 걸 알 수 있다.
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy; //DIP 해결
+
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
