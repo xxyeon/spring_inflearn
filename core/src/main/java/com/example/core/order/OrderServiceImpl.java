@@ -11,11 +11,26 @@ public class OrderServiceImpl implements OrderService {
 
     //final이면 무조건 할당이 되어야함.
     //DIP의존: 이전 코드와 비교해보면 인터페이스만 존재한다는 걸 알 수 있다.
-    private final MemberRepository memberRepository;
-    private final DiscountPolicy discountPolicy; //DIP 해결
+    private MemberRepository memberRepository;
+    private DiscountPolicy discountPolicy; //DIP 해결
 
     @Autowired
+    public void setMemberRepository(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+    @Autowired
+    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
+
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
+
+    //일반 메서드 주입
+    @Autowired
+    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
