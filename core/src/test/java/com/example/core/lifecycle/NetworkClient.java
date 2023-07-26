@@ -3,7 +3,7 @@ package com.example.core.lifecycle;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class NetworkClient implements InitializingBean, DisposableBean {
+public class NetworkClient{
 
     private String url; //접속해야하는 서버 url
 
@@ -33,15 +33,13 @@ public class NetworkClient implements InitializingBean, DisposableBean {
     }
 
     //afterPropertiesSet(): 의존관계 주입이 끝나면 호출
-    @Override
-    public void afterPropertiesSet() throws Exception {
+    public void init() throws Exception {
         connect();
         call("초기화 연결 메시지");
     }
 
     //빈이 종료될 때 호출
-    @Override
-    public void destroy() throws Exception {
+    public void close() throws Exception {
         disconnect();
     }
 }
