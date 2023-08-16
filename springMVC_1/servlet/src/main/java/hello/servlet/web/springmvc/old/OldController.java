@@ -12,6 +12,6 @@ public class OldController implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("OldController.handleRequest");
-        return null;
+        return new ModelAndView("new-form"); //WEB-INF/new-form.jsp 논리적인 주소만 넣어줌. 뷰 리졸버에서 물리적인 주소로 변경해야함
     }
 }
