@@ -13,15 +13,6 @@ public class JpaMain {
         tx.begin();
 
         try {
-            //entityManager.close() 전에 code 작성
-
-//            Member findMember = em.find(Member.class, 200L);
-            Member member = new Member(200L, "member200");
-            em.persist(member);
-
-            em.flush();
-
-            System.out.println("=====================");
 
 
             tx.commit();
