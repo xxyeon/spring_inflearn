@@ -13,7 +13,7 @@ public class MemberProduct {
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "PRODUCT_ID")
     private Product product;
 
