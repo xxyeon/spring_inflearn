@@ -13,17 +13,17 @@ public class Team extends BaseEntity{
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "team") //Member의 team과 매핑
-    private List<Member> members = new ArrayList<>();
+   /* @OneToMany(mappedBy = "team") //Member의 team과 매핑
+    private List<Member> members = new ArrayList<>();*/
 
-    public List<Member> getMembers() {
+   /* public List<Member> getMembers() {
         return members;
     }
 
     public void setMembers(List<Member> members) {
         this.members = members;
     }
-
+*/
     public Long getId() {
         return id;
     }
