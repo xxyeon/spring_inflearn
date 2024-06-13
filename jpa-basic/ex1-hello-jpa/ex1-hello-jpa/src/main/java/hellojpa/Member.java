@@ -18,6 +18,10 @@ public class Member{
     @Column(name = "USERNAME")
     private String username; //객체는 username사용하고 db에서는 name이라고 사용
 
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
     @Embedded
     private Period workperiod;
 

@@ -3,12 +3,9 @@ package hello.springmvc.basic.response;
 
 import hello.springmvc.basic.HelloData;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,7 +25,7 @@ public class ResponseBodyController {
 
     @GetMapping("/response-body-string-v2")
     public ResponseEntity<String> responseBodyV2() throws IOException {
-        return new ResponseEntity<>("ok", HttpStatus.OK);
+        return new ResponseEntity<>("ok",HttpStatus.OK);
     }
 
 //    @ResponseBody
@@ -50,7 +47,7 @@ public class ResponseBodyController {
 
     //API는 아래와 같은 스타일 많이 사용
     @ResponseStatus(HttpStatus.OK)
-//    @ResponseBody
+    //@ResponseBody
     @GetMapping("/response-body-json-v2")
     public HelloData responseBodyJsonV2() {
         HelloData helloData = new HelloData();

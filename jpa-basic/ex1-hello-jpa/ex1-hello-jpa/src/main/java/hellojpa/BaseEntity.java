@@ -10,6 +10,9 @@ public abstract class BaseEntity {
     private String createBy;
     private LocalDateTime createdDate;
 
+    private String lastModifiedBy;
+    private LocalDateTime lastModifiedDate;
+
     public String getCreateBy() {
         return createBy;
     }
@@ -41,7 +44,4 @@ public abstract class BaseEntity {
     public void setLastModifiedDate(LocalDateTime lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
-
-    private String lastModifiedBy;
-    private LocalDateTime lastModifiedDate;
 }
