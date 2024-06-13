@@ -1,21 +1,5 @@
 # spring_inflearn
-## 커리큘럼
-### 스프링 완전 정복 시리즈
-7/17 ~
-|강의명|진행 상태|
-|---|---|
-|스프링 핵심 원리|(완)|
-|HTTP 웹 기본 지식|(완)|
-|스프링 MVC 1|(완)|
-|스프링 MVC 2|8/29~|
-|스프링 DB 1|(완) 복습 필요|
-|스프링 DB 2||
-### 스프링 부트와 JPA 실무 완전 정복
-|강의명|진행 상태|
-|--|--|
-|스프링 부트와 JPA 활용 1|기본편 학습 필요|
-|기본편|진행중|
-|스프링 부트와 JPA 활용 1 (복습)||
-|스프링 부트와 JPA 활용 2||
-|스프링 데이터 JPA||
-|Querydsl||
+- [스프링 공부 기록](https://mystudylog.tistory.com/category/Spring)
+
+
+- [스프링 JPA](https://mystudylog.tistory.com/category/JPA)
