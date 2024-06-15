@@ -24,8 +24,8 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL) //OderItem객체 필드명 order에 의해 매핑이 된다.
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "delibery_id")
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "delivery_id")
     private Delivery delivery;
     private LocalDateTime orderDate;
 
