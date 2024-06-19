@@ -3,6 +3,7 @@ package jpabook.jpashop.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jpabook.jpashop.domain.item.Item;
 import lombok.*;
+import org.hibernate.annotations.BatchSize;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED) //기본 생성자 protected로 지정
+//@BatchSize(size = 100)
 public class OrderItem {
     @Id
     @GeneratedValue
