@@ -61,7 +61,7 @@ public class MemberController {
         Page<MemberDto> map = memberRepository.findAll(request).map(MemberDto::new); //Page그대로 반환하면 안되고 한번 감싸서 반환
         return map;
     }
-    @PostConstruct
+//    @PostConstruct
     public void init() {
         for (int i = 0; i < 100; i++) {
             memberRepository.save(new Member("user" + i, i));
