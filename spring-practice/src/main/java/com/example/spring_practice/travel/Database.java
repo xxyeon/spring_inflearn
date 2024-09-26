@@ -6,7 +6,8 @@ import org.springframework.util.StringUtils;
 
 @Slf4j
 public class Database {
-    static void connect(String username, String password) {
+
+    public Database(String username, String password) {
         if (!StringUtils.hasLength(username)){
             throw new CustomException(1, "EMPTY_USERNAME", "유저네임 입력값은 필수 입니다.");
         } else if (!StringUtils.hasLength(password)) {
