@@ -15,12 +15,12 @@ import org.springframework.util.StringUtils;
 public class SpringPracticeApplication {
 	
 	public static void main(String[] args) {
-		Member aaron = new Member();
-		aaron.setName("Aaron");
+		Member aaron = new Member("Aaron");
+
 		aaron.setEmail("aaron@example.com");
 		System.out.println("aaron = " + aaron);
-		Member baron = new Member();
-		baron.setName("Baron");
+		Member baron = new Member("Baron");
+
 		baron.setEmail("baron@example.com");
 		System.out.println("baron = " + baron);
 
