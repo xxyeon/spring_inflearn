@@ -19,26 +19,7 @@ public class SpringPracticeApplication {
 	
 	public static void main(String[] args) {
 
-
-		Member aaron = Member.builder()
-				.age(10)
-				.favorites(List.of("Game", "Animation"))
-				.email("common@example.com")
-				.favorite("book")
-				.favorite("Cook")
-				.age(29)
-				.build();
-
-		System.out.println("aaron = " + aaron);
-
-		Member baron = Member.builder()
-				.age(10)
-				.email("common@example.com")
-				.favorite("book")
-				.favorite("Cook")
-				.age(40)
-				.build();
-
+		Member baron = Member.of("baron");
 		System.out.println("baron = " + baron);
 
 

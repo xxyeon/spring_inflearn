@@ -6,6 +6,7 @@ import java.util.List;
 
 @Builder
 @ToString
+@AllArgsConstructor
 public class Member {
 
     private Integer id;// Reference Type 주소를 담는 그릇 : 객체가 담기며, NULL 이 들어갈 수 있다.
@@ -16,8 +17,6 @@ public class Member {
     @Builder.Default
     private String email = "undefined";
 
-    @Singular
-    private List<String> favorites;
 
     public static class MemberBuilder {
         public MemberBuilder age(int age) {
@@ -27,6 +26,12 @@ public class Member {
             this.age = age;
             return this;
         }
+    }
+
+
+    public static Member of(String name) {
+        //factory
+        return new Member(1, name, 0, "undefined");
     }
 
 }
