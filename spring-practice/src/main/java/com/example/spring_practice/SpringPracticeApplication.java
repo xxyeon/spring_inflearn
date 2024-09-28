@@ -17,7 +17,19 @@ public class SpringPracticeApplication {
 	
 	public static void main(String[] args) {
 
-		Member aaron = new Member(1, "Aaron", 10, "aaron@example.com");
+		String request = "AARON";
+
+		Member.MemberBuilder memberBuilder = Member.builder()
+				.age(10)
+				.email("common@example.com");
+		if(request.equals("AARON")) {
+			memberBuilder.id(1).name("aaron");
+		} else if(request.equals("BARON")) {
+			memberBuilder.id(2).name("baron");
+		}
+
+		Member aaron = memberBuilder.build();
+
 
 		System.out.println("aaron = " + aaron);
 
