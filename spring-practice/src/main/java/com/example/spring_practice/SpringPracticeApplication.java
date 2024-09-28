@@ -26,17 +26,19 @@ public class SpringPracticeApplication {
 				.email("common@example.com")
 				.favorite("book")
 				.favorite("Cook")
+				.age(29)
 				.build();
+
+		System.out.println("aaron = " + aaron);
 
 		Member baron = Member.builder()
 				.age(10)
 				.email("common@example.com")
 				.favorite("book")
 				.favorite("Cook")
+				.age(40)
 				.build();
 
-
-		System.out.println("aaron = " + aaron);
 		System.out.println("baron = " + baron);
 
 
