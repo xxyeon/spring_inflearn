@@ -13,8 +13,10 @@ public class Member {
     @Setter
     private String email;
 
-    public Member(String name) {
-        this.name = name;
+    public Member(MemberRequestDto memberRequestDto) {
+        this.name = memberRequestDto.getName();
+        this.email = memberRequestDto.getEmail();
+
     }
 
 }
