@@ -1,7 +1,6 @@
 package com.example.spring_practice;
 
 import com.example.spring_practice.dto.ParsedRequestDto;
-import com.example.spring_practice.dto.RequestDto;
 import com.example.spring_practice.member.Member;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
