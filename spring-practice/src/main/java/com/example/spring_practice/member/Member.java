@@ -1,12 +1,11 @@
 package com.example.spring_practice.member;
 
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-@ToString
+import java.util.List;
+
 @Builder
+@ToString
 public class Member {
 
     private Integer id;// Reference Type 주소를 담는 그릇 : 객체가 담기며, NULL 이 들어갈 수 있다.
@@ -17,12 +16,8 @@ public class Member {
     @Builder.Default
     private String email = "undefined";
 
-    @Builder
-    public Member(int age, String email) {
-        this.age = age;
-        this.email = email;
-    }
-
+    @Singular
+    private List<String> favorites;
 
 
 }

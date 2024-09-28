@@ -11,27 +11,33 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.util.StringUtils;
 
+import java.util.List;
+
 @SpringBootApplication
 @Slf4j
 public class SpringPracticeApplication {
 	
 	public static void main(String[] args) {
 
-		String request = "AARON";
 
-		Member.MemberBuilder memberBuilder = Member.builder()
+		Member aaron = Member.builder()
 				.age(10)
-				.email("common@example.com");
-		if(request.equals("AARON")) {
-			memberBuilder.id(1).name("aaron");
-		} else if(request.equals("BARON")) {
-			memberBuilder.id(2).name("baron");
-		}
+				.favorites(List.of("Game", "Animation"))
+				.email("common@example.com")
+				.favorite("book")
+				.favorite("Cook")
+				.build();
 
-		Member aaron = memberBuilder.build();
+		Member baron = Member.builder()
+				.age(10)
+				.email("common@example.com")
+				.favorite("book")
+				.favorite("Cook")
+				.build();
 
 
 		System.out.println("aaron = " + aaron);
+		System.out.println("baron = " + baron);
 
 
 
