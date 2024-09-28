@@ -17,10 +17,8 @@ public class SpringPracticeApplication {
 	
 	public static void main(String[] args) {
 
-		MemberRequestDto dto = new MemberRequestDto("Aaron", "aaron@example.com");
-		Member aaron = new Member(dto);
+		Member aaron = new Member(1, "Aaron", 10, "aaron@example.com");
 
-		aaron.setEmail("aaron@example.com");
 		System.out.println("aaron = " + aaron);
 
 
