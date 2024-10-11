@@ -1,5 +1,6 @@
 package com.example.spring_practice.mvc.controller;
 
+import com.example.spring_practice.mvc.controller.dot.UserResponseDto;
 import com.example.spring_practice.mvc.service.User;
 import com.example.spring_practice.mvc.service.UserServiceInterface;
 import jakarta.validation.Valid;
@@ -32,14 +33,14 @@ public class UserController {
 
     @GetMapping("")
     public String userPage(Model model) {
-        List<User> users = userService.findAll();
+        List<UserResponseDto> users = userService.findAll();
         model.addAttribute("users", users);
         return "/users/list";
     }
 
     @GetMapping("/detail")
     public String detailPage(@RequestParam Integer id, Model model) {
-        User user = userService.findById(id);
+        UserResponseDto user = userService.findById(id);
         model.addAttribute("id", user.getId());
         model.addAttribute("name", user.getName());
         model.addAttribute("age", user.getAge());
@@ -51,14 +52,14 @@ public class UserController {
     @GetMapping("/data")
     @ResponseBody
     public User detailData(@RequestParam Integer id) {
-        User user = userService.findById(id);
+        UserResponseDto user = userService.findById(id);
         return user;
     }
 
     @PostMapping("")
     @ResponseBody
     public User save(@RequestBody @Valid UserCreateRequestDto request) {
-        User user = userService.save(request.getName(), request.getAge(), request.getJob(), request.getSpecialty());
+        UserResponseDto user = userService.save(request.getName(), request.getAge(), request.getJob(), request.getSpecialty());
         return user;
     }
 }

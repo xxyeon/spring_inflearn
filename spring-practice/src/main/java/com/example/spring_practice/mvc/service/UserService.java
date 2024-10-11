@@ -1,5 +1,6 @@
 package com.example.spring_practice.mvc.service;
 
+import com.example.spring_practice.mvc.controller.dot.UserResponseDto;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -17,17 +18,18 @@ public class UserService implements UserServiceInterface{
         users.put(3, new User(3, "Caron", 30, "Engineer", "DevOps/SRE"));
     }
 
-    public User findById(Integer id) {
-        return users.get(id);
+    public UserResponseDto findById(Integer id) {
+        return UserResponseDto.from(users.get(id));
     }
 
-    public List<User> findAll() {
-        return users.values().stream().toList();
+    public List<UserResponseDto> findAll() {
+//        users.values().stream().map((user) -> UserResponseDto.from(user)).toList(); 아래와 같은 코드
+        return users.values().stream().map(UserResponseDto::from).toList();
     }
 
-    public User save(String name, Integer age, String job, String specialty) {
+    public UserResponseDto save(String name, Integer age, String job, String specialty) {
         int generatedId = users.size() + 1;
         User saved = users.put(generatedId, new User(generatedId, name, age, job, specialty));
-        return saved;
+        return UserResponseDto.from(saved);
     }
 }
