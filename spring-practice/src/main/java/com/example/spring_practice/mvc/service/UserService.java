@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class AUserService implements UserServiceInterface {
+public class UserService implements UserServiceInterface{
     private static final Map<Integer, User> users;
 
     static {
@@ -23,5 +23,11 @@ public class AUserService implements UserServiceInterface {
 
     public List<User> findAll() {
         return users.values().stream().toList();
+    }
+
+    public User save(String name, Integer age, String job, String specialty) {
+        int generatedId = users.size() + 1;
+        User saved = users.put(generatedId, new User(generatedId, name, age, job, specialty));
+        return saved;
     }
 }
