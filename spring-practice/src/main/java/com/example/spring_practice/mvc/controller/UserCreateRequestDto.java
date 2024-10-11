@@ -1,5 +1,8 @@
 package com.example.spring_practice.mvc.controller;
 
+import com.example.spring_practice.mvc.controller.dot.UserResponseDto;
+import com.example.spring_practice.mvc.service.User;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -11,11 +14,25 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class UserCreateRequestDto {
-    @NotBlank
+    private Integer id;
     private String name;
-    @Min(10)
     private Integer age;
-    @NotNull
     private String job;
-    private String specialty = "(empty)";
+    private String specialty;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String address;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String postcode;
+
+    public static UserResponseDto from(User entity) {
+        return new UserResponseDto(
+                entity.getId(),
+                entity.getName(),
+                entity.getAge(),
+                entity.getJob(),
+                entity.getSpecialty(),
+                null,
+                null
+        );
+    }
 }

@@ -51,14 +51,14 @@ public class UserController {
 
     @GetMapping("/data")
     @ResponseBody
-    public User detailData(@RequestParam Integer id) {
+    public UserResponseDto detailData(@RequestParam Integer id) {
         UserResponseDto user = userService.findById(id);
         return user;
     }
 
     @PostMapping("")
     @ResponseBody
-    public User save(@RequestBody @Valid UserCreateRequestDto request) {
+    public UserResponseDto save(@RequestBody @Valid UserCreateRequestDto request) {
         UserResponseDto user = userService.save(request.getName(), request.getAge(), request.getJob(), request.getSpecialty());
         return user;
     }
