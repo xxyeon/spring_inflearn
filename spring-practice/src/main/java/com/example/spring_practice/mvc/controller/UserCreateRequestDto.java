@@ -13,15 +13,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserCreateRequestDto {
     private Integer id;
     private String name;
     private Integer age;
     private String job;
     private String specialty;
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String address;
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String postcode;
 
     public static UserResponseDto from(User entity) {
